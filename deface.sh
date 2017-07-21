@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#allows test execution
-if [ -z $SERVICE_DIR ]; then export SERVICE_DIR=`pwd`; fi
-if [ -z $ENV ]; then export ENV=IUHPC; fi
-
 module load freesurfer
 
 time mri_deface `$SERVICE_DIR/jq -r '.t1' config.json` \
