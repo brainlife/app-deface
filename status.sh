@@ -17,11 +17,11 @@ fi
 if [ -f pid ]; then
     if ps -p $(cat pid) > /dev/null
     then
-            tail -1 stdout.log
-            exit 0
+	    tail -1 stdout.log
+	    exit 0
     else
-            echo "no longer running but didn't finish"
-            exit 1
+	    echo "no longer running but didn't finish"
+	    exit 2
     fi
 fi
 
