@@ -1,7 +1,9 @@
 #!/bin/bash
 
+env
+
 #for debugging
-[ ! $SERVICE_DIR ] && export SERVICE_DIR=`pwd`
+[ -z $SERVICE_DIR ] && SERVICE_DIR=`pwd`
 
 module load freesurfer
 
