@@ -8,9 +8,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "start.sh",
-    "stop": "stop.sh",
-    "status": "status.sh"
+    "start": "~/abcd/start.sh -s run.sh -c 1 -t 00:10:00",
+    "stop": "~/abcd/stop.sh",
+    "status": "~/abcd/status.sh"
   },
   "repository": {
     "type": "git",
