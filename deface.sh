@@ -6,7 +6,7 @@ set -e
 
 #https://mail.google.com/mail/u/0?ui=2&ik=c3edd9d861&view=lg&permmsgid=msg-f%3A1641244202227469251&ser=1
 
-export FS_HISTO_STD_THRESH=15
+export FS_HISTO_STD_THRESH=20
 # [Bruce Fisschl]
 # It's hard to explain what it does in detail, but
 # essentially the algorithm decided that the histogram fit it did to wm was
