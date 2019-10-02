@@ -11,3 +11,5 @@ set -x
 echo $FREESURFER_LICENSE > license.txt
 
 time singularity exec -e -B `pwd`/license.txt:/usr/local/freesurfer/license.txt docker://brainlife/freesurfer:6.0.0 ./deface.sh
+
+echo "all done"
