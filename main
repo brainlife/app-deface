@@ -4,15 +4,10 @@
 #PBS -l walltime=00:30:00
 #PBS -N deface
 
-#module load freesurfer
-#time mri_deface `jq -r '.t1' config.json` \
-#	$FREESURFER_HOME/average/talairach_mixed_with_skull.gca \
-#	$FREESURFER_HOME/average/face.gca \
-#	t1.nii.gz
+set -e
+set -x
 
 [ -z "$FREESURFER_LICENSE" ] && echo "Please set FREESURFER_LICENSE in .bashrc" && exit 1;
-
 echo $FREESURFER_LICENSE > license.txt
-export SINGULARITYENV_FREESURFER_HOME=$FREESURER_HOME
-time singularity exec -e -B `pwd`/license.txt:/usr/local/freesurfer/license.txt docker://brainlife/freesurfer:6.0.0 ./deface.sh
 
+time singularity exec -e -B `pwd`/license.txt:/usr/local/freesurfer/license.txt docker://brainlife/freesurfer:6.0.0 ./deface.sh
