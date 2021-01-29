@@ -3,7 +3,6 @@
 set -x
 set -e
 
-
 #https://mail.google.com/mail/u/0?ui=2&ik=c3edd9d861&view=lg&permmsgid=msg-f%3A1641244202227469251&ser=1
 
 export FS_HISTO_STD_THRESH=15
@@ -15,4 +14,8 @@ export FS_HISTO_STD_THRESH=15
 # with a bigger value on all your data and see how it goes (15 is probably
 # fine, 10 is the default)
 
-./mri_deface `jq -r '.t1' config.json` $FREESURFER_HOME/average/talairach_mixed_with_skull.gca $FREESURFER_HOME/average/face.gca t1.nii.gz
+mkdir -p out
+
+mri_deface `jq -r '.t1' config.json` \
+  $FREESURFER_HOME/average/talairach_mixed_with_skull.gca \
+  $FREESURFER_HOME/average/face.gca out/t1.nii.gz
